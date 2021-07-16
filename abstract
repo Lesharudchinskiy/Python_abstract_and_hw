@@ -1,0 +1,427 @@
+# В переменных хранится знаечение (данные , связанные с переменной)
+# Строка представляет собой простую последовательность символов , любая последовательность в ковычках является строкой
+# Метод - это дейтсвие, которые выполняется с данными
+# Метод name.title() - Преобразует первый символ каждого слова к строке к верхнему регистру.
+# Метод name.upper() - Все буквы заглавные
+# Метод name.lower() - Все буквы в нижнем регистре (не меняет изначального значения переменной)
+# Конкатенация - Объединение строк знаком +:
+#         f_name = "vasya"
+#         l_name = "Sidorenko"
+#         f_name = f_name.title() + " " + l_name
+#         print(f_name)
+
+#  "\t" - строка с табуляцией (print("\tPython")
+#  "\n" - строка с пропуском строки (print("\nPython")
+#
+# Метод name.rstrip() - удалить пропуски у правого края
+# Метод name.lstrip() - удалить пропуски у левого края
+# Метод name.strip() - удалить пропуски с обоих концов
+# Ф-ия str() - преобразует нестроковые знаения в строку
+# Ф-ия int() - преобразует нецельночисленные знаения в целые числа
+#
+#   ZEN OF PYTHON    import this
+#
+# Список - упорядоченный набор данных (набор элементов , следующих в определенном порядке)
+#
+#   bikes=['trek','shkolnik','kuzya']
+#   print(bikes[0].title())
+#   out: Trek
+#
+# Чтобы запросить последний элемент по индексу - необходимо : bikes[-1]
+#
+# Замена элемента списка : bikes[0] = 'scout'
+#                          print(bikes)
+#                          bikes=['scout','shkolnik','kuzya']
+#
+# Добавление элемента в конец список методом .append()    список.append("что добавить"):
+#                               bikes.append('vas')
+#                               print(bikes)
+#                          out: ['scout', 'shkolnik', 'kuzya', 'vas']
+#
+# Вставка элемента в список методом insert()  список.insert(позиция, "что вставить"):
+#                                             moto = ["honda", "yamaha", "suzuki"]
+#                                             moto.insert(0, 'ducati')
+#                                             print(moto)
+#                                       out:  ['ducati', "honda", "yamaha", "suzuki"]
+#
+# Удаление элементов из списка командой del - позволяет удалить  из любой позиции , если известен его индекс, удаленное
+# значение становится недоступным!
+#                              moto = ["honda", "yamaha", "suzuki"]
+#                              del moto[1]
+#                              print(moto)
+#                         out: ["honda", "suzuki"]
+#
+# Удаление элемента с использованием метода pop    список.pop()  - удаляет последний элемент из списка, но позволяет
+# работать с ним после удаления:
+#                            moto = ["honda", "yamaha", "suzuki"]
+#                            popped_moto = moto.pop()
+#                            print(moto)
+#                            print(popped_moto)
+#                       out: ["honda", "yamaha"]
+#                            "suzuki"
+# -Метод .pop() можно использовать для удаления любого элемента по позиции из списка , для этого нужно написать:
+# список.pop(позиция в списке)
+#
+# Если нужно просто удалить элемент из списка , никак его не используя в дальнейшем - команда del !
+# Если нужно использовать элемент после удаления из списка - метод .pop()!
+#
+# Удаление элементов по значению методом remove()  список.remove("значение" или переменная)
+#                              moto = ["honda", "yamaha", "suzuki"]
+#                              moto.remove("honda")
+#                              print(moto)
+#                         out: ["yamaha", "suzuki"]
+#
+#  remove удаляет только первое вхождение заданного значения из списка (чтобы удалить все вхождения ,
+#  необходимо использовать циклы)
+#
+# УПОРЯДОЧЕНИЕ СПИСКА:
+#
+# метод sort()    список.sort()     - метод ПОСТОЯННОЙ сортировки списка по алфавиту ;
+#                 список.sort(reverse=True - в обратном порядке)
+#
+#                  auto = ["bmw", "audi", "subaru"]
+#                  auto.sort()
+#                  print(auto)
+#             out: ["audi", "bmw", "subaru"]
+#
+# Функция sorted() - позволяет представить список в определеннном порядке, НО НЕ ИЗМЕНЯЕТ ФАКТИЧЕСКОГО ПОРЯДКА элементов
+# в списке. (ВРЕМЕНННАЯ СОРТИРОВКА СПИСКА)
+#                    sorted(список, reverse=True - в обратном порядке)
+#
+#                   car = ["bmw", "audi", "toyota", "subaru"]
+#                   print(car)
+#                   print(sorted(car))
+#                   print(car)
+
+#               out:   ['bmw', 'audi', 'toyota', 'subaru']
+#               out:   ['audi', 'bmw', 'subaru', 'toyota']  - ВРЕМЕННЫЙ алфавитный порядок
+#               out:   ['bmw', 'audi', 'toyota', 'subaru']
+#
+#
+# Метод reverse()     список.reverse()- осуществляет ПОСТОЯННОЕ изменение порядка элементов, но можно вернуться к
+# исходному списку,снова применив reverse()   (НЕ АЛФАВИТНОМ)
+#
+#                cars = ["bmw", "audi", "toyota", "subaru"]
+#                print(cars)
+#                cars.reverse()
+#                print(cars)
+#
+#             out:   ['bmw', 'audi', 'toyota', 'subaru']
+#             out:   ['subaru', 'toyota', 'audi', 'bmw']
+#
+# Функция len() - позволяет определить длину списка.
+#
+#              cars = ["bmw", "audi", "toyota", "subaru"]
+#              print(len(cars))
+#
+#             out:    4
+#
+#  Цикл for - используется для каждого ОЧЕРЕДНОГО элемента списка, и взятый элемент сохраняется в переменную, когда
+# элементы в списке заканчиваются - Python переходит к след стороке программы или завершится (если строк нет).
+#
+#  Функция range(А, В, С) - построение числовых значений от А до В (не включительно) с шагом С (если он задан)
+#
+#       range для создания числового списка:
+#                     even_numbers = list(range(2, 11, 2))
+#                     print(even_numbers)
+#
+#                out: [2, 4, 6, 8, 10]
+#
+# Простая статистика с числовыми списками:
+#          Функции:  max(), min(), sum()
+#
+#              digits = [1, 2, 3, 4, 5, 6]
+#              print(max(digits))
+#              print(min(digits))
+#              print(sum(digits))
+#
+#         out: 6
+#              1
+#              21
+#
+#  List comprehension (Генератор списка):
+#  Построение списка квадратов чисел от 1 до 10:
+
+#           squares = [value**2 for value in range(1, 11)]
+#           print(squares)
+#
+#      out: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+#
+#      Вместо:  squares = []
+#               for i in range(1, 11):
+#                    squares.append(i**2)
+#               print(squares)
+#
+# Срезы (slice) - позволяют обратиться к конкретным множествам элементов в списке.
+#
+#                      players = ['charlie', 'martina', 'misha', 'flora', 'eli']
+#                      print(players[0:3])   - срез с 0 по 2ой включительно    ['charlie', 'martina', 'misha']
+#                      print(players[:4])     - с 0 по 3тий вкл                ['charlie', 'martina', 'misha', 'flora']
+#                      print(players[2:])   - с 2го до конца                   ['misha', 'flora', 'eli']
+#                      print(players[-3:])  - 3ий с конца до конца             ['misha', 'flora', 'eli']
+#
+#         Пребор содержимого среза:
+#
+#                       players = ['charlie', 'martina', 'misha', 'flora', 'eli']
+#                       for player in players[0:3]:
+#                           print(player.title())
+#
+#                  out: Charlie
+#                       Martina
+#                       Misha
+#
+#          Копирование списка срезом:
+
+#              список[:] - создает полный срез с первого до последнего элемента (КОПИРОВАНИЕ ПОЛНОГО СПИСКА)
+#
+#  Кортеж (tuple) - неизменяемый список элементов. Можно обращаться к отдельным элементам кортежа.
+#
+#           имя_кортежа = (n1, n2, . . . n)
+#           print(имя_кортежа[0])
+#
+#         - Перебор всех значений кортежа:
+#                            for переменная in имя_кортежа:
+#                                print(переменная)
+#
+#         - Замена кортежа (переопределение кортежа):
+#                        kortej = (10, 20)
+#                        print(kortej)
+
+#                   out: (10, 20)
+
+#                        kortej = (30, 40)
+#                        print(kortej)
+#
+#                   out: (30, 40)
+#
+#  Рекомендации по написанию кода (PEP8):
+#                   ОТСТУПЫ - 4 пробела
+#                   ДЛИНА СТРОКИ - 79 символа на строку
+#
+#
+#   КЛЮЧЕВОЕ СЛОВО "in" - присутствует ли значение в списке;       not in   - отсутствует ли значение в списке
+#                    Пример:     toppings = ['mushrooms', 'onion', 'pineapple']
+#                                print('mushrooms' in toppings)
+#                                print('pepperoni' in toppings)
+#
+#                          out:  True
+#                                False
+#
+#   Логические выражения предоставляют эффективные средства для контроля состояния программы или определенного условия,
+# играющего важную роль в программе.
+#
+#
+#   Чтобы проверить наличие элементов в списке , существует конструкция :
+#
+#                     if наименование_списка:
+#
+#               out:  True - если список не пустой
+#                     False  - если список пустой
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#    ФУНКЦИИ - именованный блок кода, предназначений для выполнения одной конкретной задачи.
+#
+#     Синтаксис:     def наименование_функции(параметры):       # определение функции
+#                       тело функции
+#
+#                   наименование_функции(аргументы)             # вызов функции
+#
+#      Параметр - условные данные, необходимые для выполнения ф-ии
+#      Аргумент - конкретная информация , переданная при вызове функции
+#
+#
+#      Аргументы:
+#
+#      1)Позиционные - перечисляются в порядке, точно соответствующему порядку записи параметров.
+#                         def describe_pet(type_, nickname):
+#                             """Print info about pet"""
+#                             print('My ' + type_ + "'s name is " + nickname.title() + '.')
+#
+#
+#                        describe_pet('parrot', 'kesha') # позиционные аргументы
+#
+#
+#      2)Именованный - представляет пару <ключ-значение>, передаваемую ф-ии (порядок не важен)
+#
+#                        describe_pet(nickname='kirill', type_='rat') # именованные аргументы
+#
+#      2.1) Значения по умолчанию:
+#
+#          def describe_pet(nickname, type_ = 'dog'):  #значение параметра type_ = 'dog' - по умолчанию(если не задано)
+#              """Print info about pet"""
+#              print('My ' + type_ + "'s name is " + nickname.title() + '.')
+#
+#
+#          describe_pet('barky')
+#
+#      2.2) Необязательные аргументы:
+#
+#                    def describe_pet(nickname, type_, color=''):
+#                        """Print info about pet"""
+#                        if color:
+#                            print('My ' + type_ + "'s name is " + nickname.title() + '.')
+#                            print("It's color is " + color + '.\n')
+#                        else:
+#                            print('My ' + type_ + "'s name is " + nickname.title() + '.\n')
+#
+#
+#                    describe_pet('barky', 'dog')
+#                    describe_pet('barky', 'dog', 'white')
+#
+#               out: My dog's name is Barky.
+#
+#                    My dog's name is Barky.
+#                    It's color is white.
+#
+#
+#
+#
+#
+#       return - команда передает значение из ф-ии в строку, в которой эта ф-ия была вызвана ??????
+#
+#       - вызывая ф-ию, которая возвращает значение, необходимо предоставить переменную, в которой должно храниться
+#    возвращаемое значение.
+#
+#       Пример:           def get_formatted_name(first_name, last_name):
+#                            full_name = first_name + ' ' + last_name
+#                            return full_name.title()
+#
+#
+#                         person = get_formatted_name('daniel', 'marin')
+#                         print(person)
+#
+#
+#    ЦИКЛ while , когда необходимо из одного списка переместить элемент в другой список, при этом удалив его:
+#
+#                 def printing_models(unprinted_designs, completed_models):
+#                 while unprinted_designs:                                  # пока список НЕ ПУСТОЙ , цикл будет True!
+#                    current_design = unprinted_designs.pop()
+#                    print(current_design.title() + ' is printing . . . ')
+#                    completed_models.append(current_design)
+#
+#
+#                 def show_completed_models(completed_models):
+#                 print('Here are completed models:')
+#                 for model in completed_models:
+#                 print(model.title())
+#
+#
+#                 unprinted = ['case', 'robot', 'frame']
+#                 completed = []
+#                 printing_models(unprinted, completed)
+#                 show_completed_models(completed)
+#
+#    Чтобы оставить ОРИГИМНАЛ СПИСКА unprinted, можно передать функции его СРЕЗ:
+#
+#            Синтаксис: имя_функции(имя_списка[:])     - создает копию списка без изменения оригинала
+#
+#            Пример: unprinted = ['case', 'robot', 'frame']
+#                    completed = []
+#                    printing_models(unprinted[:], completed)
+#                    show_completed_models(completed)
+#                    print(unprinted)
+#
+#            out:    ['case', 'robot', 'frame']     - оригинальный список СОХРАНЯЕТСЯ!
+#
+#
+#     Передача ПРОИЗВОЛЬНОГО набора АРГУМЕНТОВ:
+#
+#            Синтаксис:   def имя_функции(*имя_параметра):    # *параметр - создает пустой КОРТЕЖ с ИМЕНЕМ ПАРАМЕТРА и
+#  упаковывает в него все полученные значения
+#
+#    Если нужно использовать ПОЗИЦИОННЫЙ (и (или) именованный) + ПРОИЗВОЛЬНЫй , необходимо, чтобы произвольный аргумент
+#  стоял на ПОСЛЕДНЕМ МЕСТЕ.
+#
+#            Синтаксис:   def имя_функции(имя_поз_параметра, *имя_произвол_параметра):
+#
+#    Передача ПРОИЗВОЛЬНОГО набора ИМЕНОВАННЫХ АРГУМЕНТОВ (ключ-значение):
+#
+#            Синтаксис:   def имя_функции(имя_поз_параметра, **имя_произвол_именован_параметра):
+#
+#            Пример:    def built_profile(first, last, **user_info):
+#                           profile = {}
+#                           profile['first_name'] = first.title()
+#                           profile['last_name'] = last.title()
+#                           for key, value in user_info.items():
+#                               profile[key] = value.title()
+#                           return profile
+#
+#
+#                           user_profile = built_profile('albert', 'einstein', location='princeton', field='physics')
+#                           print(user_profile)
+#
+#                out:   {'first_name': 'Albert', 'last_name': 'Einstein', 'location': 'Princeton', 'field': 'Physics'}
+#
+#
+#
+#      МОДУЛИ:
+#           1.1 Импортирование ВСЕГО МОДУЛЯ:
+#
+#           Синтаксис вызова модуля:        import имя_файла
+#                                           имя_файла.имя_функции_в_файле(параметры)
+#
+#           Пример: pizza.py
+#                   def making_pizza(size, *toppings):
+#                       print('\nMaking pizza ' + str(size) + '-inch with following toppings:')
+#                       for topping in toppings:
+#                           print('-' + topping)
+#
+#                   making_pizzas.py           # Вызов модуля и функций внутри модуля
+#                   import pizza
+#                   pizza.making_pizza(13, 'pepperoni')
+#                   pizza.making_pizza(16, 'extra_cheese', 'salami', 'mushrooms')
+#
+#           1.2 Можно ипортировать конкретную ф-ию из модуля:
+#
+#                     Синтаксис:       from имя_модуля import имя_функции
+#
+#                     Пример:         import pizza import making_pizza
+#                                     making_pizza(13, 'pepperoni')
+#                                     making_pizza(16, 'extra_cheese', 'salami', 'mushrooms')
+#
+#           1.3 Можно ипортировать любое кол-во ф-ий из модуля:
+#
+#                     Синтаксис:       from имя_модуля import имя_функции_0, имя_функции_1, имя_функции_2....
+#
+#        - Имя импортируемой ФУНКЦИИ можно заменить коротким уникальным ПСЕВДОНИМОМ (alias):
+#
+#                     Синтаксис:       from имя_модуля import имя_функции as имя_псевдонима
+#
+#                      Пример:         import pizza import making_pizza as mp
+#                                      mp(13, 'pepperoni')
+#                                      mp(16, 'extra_cheese', 'salami', 'mushrooms')
+#
+#         - Имя МОДУЛЯ можно заменить коротким уникальным ПСЕВДОНИМОМ :
+#
+#                   Синтаксис:       from имя_модуля as имя_псевдонима
+#
+#                   Пример:         import pizza as p
+#                                   p.making_pizza(13, 'pepperoni')
+#                                   p.making_pizza(16, 'extra_cheese', 'salami', 'mushrooms')
+#
+#
+#           1.4 Импортирование ВСЕХ ФУНКЦИЙ МОДУЛЯ (копирование):
+#
+#                  Синтаксис:       from имя_модуля import *
+#
+#                   Пример:         from pizza import *
+#                                   making_pizza(13, 'pepperoni')
+#                                   making_pizza(16, 'extra_cheese', 'salami', 'mushrooms')
+#
