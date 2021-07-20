@@ -425,3 +425,96 @@
 #                                   making_pizza(13, 'pepperoni')
 #                                   making_pizza(16, 'extra_cheese', 'salami', 'mushrooms')
 #
+
+
+
+#     Импортирование ОДНОГО КЛАССА из МОДУЛЯ:
+#                                   from имя_файла(без .ру) import имя_класса(Car)
+#
+#                    Пример:      -создаем файл my_car.py
+#
+#                                  from car_class_import import Car      # импортируем класс
+#                                  my_new_car = Car('audi', 'a4', 2016)     # Создаем экземпляр
+#                                  print(my_new_car.get_descriptive_name())   # Выводим результат метода
+
+#                                  my_new_car.odometer_reading = 23  # Выводим результат метода
+#                                  my_new_car.read_odometer()        # Выводим результат метода
+#
+#
+#     Хранение НЕСКОЛЬКИХ КЛАССОВ В МОДУЛЕ:
+#                   -В модуле может храниться сколько угодно классов, но они должны быть связаны
+#
+#                                   from имя_файла(без .ру) import имя_класса_потомка(Car)
+#
+#                   Пример:       -создаем файл my_electric_car
+#
+#                                   from car_class_import import ElectricCar
+
+#                                   tesla_car = ElectricCar('tesla', 'model S', 2020)
+#                                   print(tesla_car.get_descriptive_name())
+#                                   tesla_car.battery_size.describe_battery()
+#                                   tesla_car.battery_size.get_range()
+#
+#     Импортирование НЕСКОЛЬКИХ КЛАССОВ ИЗ МОДУЛЯ:
+#
+#                                       from имя_файла(без .ру) import имя_класса_№1, имя_класса_№2
+#
+#                    Пример:       -создаем файл my_cars:
+
+#                                   from car_class_import import Car, ElectricCar
+
+#                                   my_beetle = Car('volkswagen', 'beetle', 2016)
+#                                   print(my_beetle.get_descriptive_name())
+
+#                                   my_tesla = ElectricCar('tesla', 'model s', 2018)
+#                                   print(my_tesla.get_descriptive_name())
+#
+#
+#      Импортирование ВСЕГО МОДУЛЯ:
+#
+#                                   import имя_файла(без .ру)
+#
+#                   Пример:         -создаем файл my_cars:
+#
+#                                   import car_class_import    # файл с классами
+#
+#                                    ТОЧЕЧНАЯ ЗАПИСЬ: имя_модуля.имя_класса(аргументы)
+#                                   my_beetle = car_class_import.Car('volkswagen', 'beetle', 2016)
+#                                   print(my_beetle.get_descriptive_name())
+#
+#                                   my_tesla = car_class_import.ElectricCar('tesla', 'model s', 2018)
+#                                   print(my_tesla.get_descriptive_name())
+#
+#      Импортирование ВСЕХ КЛАССОВ ИЗ МОДУЛЯ:
+#
+#                                   import имя_модуля(файла) import *
+#
+#      Импортирование МОДУЛЯ В МОДУЛЬ:
+#                       -может понадобиться , когда один класс модуля зависит от класса другого модуля
+#
+#                         from имя_модуля_№1 import имя_класса_№1
+#                         from имя_модуля_№2 import имя_класса_№2
+#
+#               Пример:     -Разделим классы Car и ElectricCar, Battery на разные модули
+#
+#                           from car_module_import import Car
+#                           from electric_car_module_import import ElectricCar
+#
+#       Стандартная библиотека Python:
+#
+#    from collections import OrderedDict
+#    - сохраняет исходный порядок добавлени (как список) и связывает 2 вида информации (ключ-значение (словарь)).
+#
+#
+#               Пример:         from collections import OrderedDict     # импортируем класс из модуля
+#                               favourite_languages = OrderedDict()     # СОЗДАЕТСЯ ЭКЗЕМПЛЯР КЛАССА OrderedDict,
+#                       который сохраняется в favourite_languages!
+#
+#                               favourite_languages['kirill'] = 'js'
+#                               favourite_languages['phil'] = 'py'
+#                               favourite_languages['sarah'] = 'c'
+#                               favourite_languages['edward'] = 'ruby'
+#                               favourite_languages['jen'] = 'py'
+#                               for name, lang in favourite_languages.items():
+#                                   print(name.title() + "'s favourite language is " + lang.title() + "!") #по порядку!
+
