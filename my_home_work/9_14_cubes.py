@@ -6,10 +6,7 @@ class Die():
         self.sides = sides
 
     def roll_die(self):
-        for brosok in range(10):
-            self.sides = randint(1, self.sides)
-            print(self.sides, end=' ')
-        print('\n')
+        print(*[randint(1, self.sides) for _ in range(10)])  # генертруем списк и раскрываем его
 
 
 cube = Die()
