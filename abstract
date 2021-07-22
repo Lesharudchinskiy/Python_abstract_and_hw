@@ -543,3 +543,28 @@
 #                              with open('pi_digits.txt') as file_object:
 #                                  content = file_object.read()
 #                                  print(content)
+#           Пути к файлам:
+#
+#                   1)Относительный путь:
+#
+#                   Пример: file_path = 'text_files/pi.txt'  # ищет относительно каталога, где содержится файл .ру
+#                           with open(file_path) as file_object:
+#                           content = file_object.read()
+#                           print(content)
+#
+#                   2)Абсолютный путь:
+#
+#                   Пример: file_path = 'C:/Users/RudavinAS/PycharmProjects/other_files/pi2.txt'
+#                           with open(file_path) as file_object:
+#                               content = file_object.read()
+#                               print(content)
+#
+#           Чтение по строкам:
+#
+#                   Пример: filename = 'pi_digits.txt'
+#
+#                           with open(filename) as file_object:
+#                               for line in file_object:
+#                                   print(line.rstrip())
+#
+#           Создание списка строк по содержимому файла:
