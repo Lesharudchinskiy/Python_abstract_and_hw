@@ -1,0 +1,6 @@
+In Python you can to Creating bots
+In Python you can to Scraping websites
+In Python you can to Machine learning, data visualization, and analysis
+In Python you can to Web Development with frameworks like Django and Flask
+In Python you can to Game development with Pygame
+In Python you can to Mobile apps with frameworks like Kivy
