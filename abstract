@@ -567,4 +567,18 @@
 #                               for line in file_object:
 #                                   print(line.rstrip())
 #
-#           Создание списка строк по содержимому файла:
+#           Создание списка строк по содержимому файла:    (Работа с содержимым файла:)
+#
+#                      Пример:     file_name = 'pi_digits.txt'
+#
+#                                  with open(file_name) as file_object:
+#                                    lines = file_object.readlines()    # метод .readlines() - последовательно читает
+#                                               каждую строку из файла и сохраняет ее в список, а список в переменную, с
+#                                               которой можно работать после завершения блока with.
+#                                    pi_string = ''
+#                                    for line in lines:
+#                                        pi_string += line.strip()  # удаляется символ новой строки и пробелы
+#
+#                                    print(pi_string)               #  3.141592653589793238462643383279
+#                                    print(len(pi_string))          #  36
+#
