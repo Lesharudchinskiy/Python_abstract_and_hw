@@ -582,3 +582,73 @@
 #                                    print(pi_string)               #  3.141592653589793238462643383279
 #                                    print(len(pi_string))          #  36
 #
+#  Запись в пустой файл (строковые данные):
+#       Синтаксис: file_name = 'filename.txt'
+#                  with open(file_name, 'w') as f_object:
+#                      f_object.write('some text\n')   - метод .write для записи строки в файл
+#                      f_object.write('more text\n')  - если требуется записать больше 1 строки
+#
+#
+#       Второй аргумент функции open() (режимы) : 'w' - запись, 'r' - чтения, 'a' - присоединения, 'r+' - чтение+запись
+#
+#       - Если файл, открываемый при записи еще не создан, Python создаст его автоматически
+#       - Если файл существует, то Python уничтожит его содержимое перед возвращением
+#
+#       \t - табуляция
+#       \n - переход на новую строку
+#
+#   Присоединение данных к файлу:
+#           Синтаксис: file_name = 'filename.txt'
+#                      with open(file_name, 'a') as f_object:  - для добавление текста к файлу
+#                          f_object.write('some additional text.\n') - добавочный текст
+#
+#   Исключения (блок try-except):
+#               - объект для управления ошибками, возникающими в ходе выполнения программы.
+#               - если есть код обработки исключения, то во время ошибки, выполнение программы продолжится.
+#               - вывод понятного сообщения об ошибке.
+#
+#   - ZeroDivisionError (Ошибка деления на 0)
+#
+#   Блоки try-except-else (блок для обработки исключения ZeroDivisionError):
+#               -Если предполагается, что может произойти ошибка.
+#    Использование исключений для предотвращения аварийного завершения программы:
+#               Пример:
+#                           print("Give me two numbers, and I'll divide them.")
+#                           print("Enter 'q' ti quit.")
+#
+#                           while True:
+#                               first_number = input("\nFirst number: ")
+#                               if first_number == 'q':
+#                                   break
+#                               second_number = input("\nSecond number: ")
+#                               if second_number == 'q':
+#                                   break
+#                               try:                # - Если try выполнен успешно, except - пропускается.
+#                                   answer = int(first_number) / int(second_number)
+#                               except ZeroDivisionError:      # Как следует поступать при возникновении ошибки
+#                               ZeroDivisionError
+#                                   print("You can't divide by 0!")  # Вместо ошибки выполняет код.
+#                               else:                # Если try: - успешно, то код продолжается в else:
+#                                   print(answer)
+#
+#   - FileNotFoundError:
+#               Пример: filename = 'alice.txt'
+#
+#                       try:
+#                           with open(filename) as file_object:    # open порождает ошибку
+#                           content = file_object.read()  # загружает весь файл в переменную content (1 длинная строка)
+#                       except FileNotFoundError:
+#                           print("Sorry, this file: " + filename + " doesn't exist")
+#                       else:
+#                       # Подсчет приблизительного кол-ва слов в файле
+#                            words = content.split()  # разделяем строку на элементы списка
+#                            print("The file " + filename.title() + " has about " + str(len(words)) + " words")
+#
+#   Анализ текса:
+#                   имя_переменной_строки.split() - метод разделяет строку на части по всем позициям, в которых
+#                   обнаружит пробел, и сохраняет все части строки в элементах списка.
+#
+#                   Пример: title = 'Alice in Wonderland'
+#                           print(title.split())
+#
+#                      out: ['Alice', 'in', 'Wonderland']
