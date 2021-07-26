@@ -652,3 +652,23 @@
 #                           print(title.split())
 #
 #                      out: ['Alice', 'in', 'Wonderland']
+
+#   Работа с несколькими файлами (Ошибки без уведолмения пользователя pass) :
+#
+#               Пример: def count_words(filename):    # Помещаем код в функцию
+#                       """Подсчет приблизительного количества строк в файле"""
+#                           try:
+#                               with open(filename) as f_object:
+#                               content = f_object.read()
+#                           except FileNotFoundError:
+#                               print('Sorry, the file: ' + filename + " does not exist")
+#                               #pass         # Команда ПРОПУСКА ОШИБКИ
+#                           else:
+#                               words = content.split()
+#                               num_words = len(words)
+#                               print("This file " + filename + "has about " + str(num_words) + " words.")
+#
+#
+#                       filenames = ['theft.txt', 'shaming.txt', 'fly.txt', 'alice.txt'] # Помещаем названия в список
+#                       for filename in filenames:
+#                          count_words(filename)   # Запускаем цикл и выводим функцию по-очереди для каждого эл. списка.
