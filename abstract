@@ -672,3 +672,25 @@
 #                       filenames = ['theft.txt', 'shaming.txt', 'fly.txt', 'alice.txt'] # Помещаем названия в список
 #                       for filename in filenames:
 #                          count_words(filename)   # Запускаем цикл и выводим функцию по-очереди для каждого эл. списка.
+
+#   Сохранение данных (JavaScript Object Notation):
+#           Модуль json - обеспечивает запись простых структур данных в файл и загрузку данных из файла при запуске.
+#
+#       Функции json.dump() и json.load() :
+#               json.dump() - получает 2 аргумента: сохраняемые данные и объект файла, используемый для хранения
+#
+#               Пример : import json
+#
+#                        numbers = [2, 3, 5, 7, 11, 13]
+#
+#                        filename = 'numbers.json'
+#                        with open(filename, 'w') as f_obj:
+#                            json.dump(numbers, f_obj)
+#
+#               Пример : import json
+#
+#                        filename = 'numbers.json'
+#
+#                        with open(filename) as f_obj:
+#                            numbers = json.load(f_obj)     # инфомация из файла сохраняется в переменную filename
+#                            print(numbers)
