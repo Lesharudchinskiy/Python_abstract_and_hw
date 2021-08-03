@@ -9,12 +9,14 @@ class RandomWalk():
         self.num_points = num_points
 
     def get_step(self):
+        """Исходя из случайного направления и длины получаем шаг"""
         direction = choice([-1, 1])
         distance = choice([0, 1, 2, 3, 4])
         step = direction * distance
         return step
 
     def fill_walk(self):
+        """Наносим нужное кол-во точкек с их шагами"""
         while len(self.x_value) < self.num_points:
             x_step = self.get_step()
             y_step = self.get_step()
